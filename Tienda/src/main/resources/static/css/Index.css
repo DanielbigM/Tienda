@@ -1,17 +1,4 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 26 may 2022, 19:43:49
-    Author     : Margarita E
-*/
 
-
-/*
-content box: toma en cuenta, contenido, borde y padding para el calculo de la caja
-border-box: modifica valores de contenido,para que conicida con nuestro ancho y alto
-*/
 .block{
     
     background-color: purple;
@@ -23,3 +10,34 @@ border-box: modifica valores de contenido,para que conicida con nuestro ancho y 
     margin: auto;
     
 }
+
+.static{
+    position: static;
+    border: 3px solid green;
+    top:400px;
+    left:50px;
+    
+}
+.relative{
+    position: relative;
+    border: 3px solid green;
+    top:400px;
+    left:50px;
+    width: 400px;
+    height: 500px;
+}
+.fixed{
+    position: fixed;
+    border: 3px solid green;
+    top:150px;
+    left:50px;
+}
+.absolute{
+    position: absolute;
+    border: 3px solid green;
+    top:80px;
+    left:50px;
+    width: 200px;
+    height: 100px;
+}
+
