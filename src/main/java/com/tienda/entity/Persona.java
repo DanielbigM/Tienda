@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.entity;
 
@@ -16,21 +15,21 @@ import javax.persistence.Table;
 
 /**
  *
- * @author Aurelio
+ * @author Margarita E
  */
-@Entity
-@Table(name = "personas")
-public class Persona implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+@Entity//Aquí lo que estamos haciendo es declarar que esta clase sea una entidad! (Esto es mediante Spring boot)
+@Table(name="personas")//Como queremos modelar la info de una TABLA, más, el nombre de la tabla, acuerdese que hay que especificar!
+public class Persona implements Serializable{//Implementamos a serialisable que nos permitira convertir objetos en bytes para enviarlo por una red y viceversa
+    @Id //Estamos implementando el Primary Key
+    @GeneratedValue(strategy= GenerationType.IDENTITY)//Esta linea de codigo indica como queremos que nuestro ID se comporte, en este caso que sea auto incremental
+    private long id;//Aquí se guardara varas que esten el el primary key, cuando se traigan de la base de datos
+    //Estos atributos servirán para almacenar las cosas de la base de datos 
     private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
     private String email;
-
+    
     @ManyToOne
     @JoinColumn(name = "paises_id")
     private Pais pais;
@@ -91,5 +90,5 @@ public class Persona implements Serializable {
         this.pais = pais;
     }
     
-
+    
 }

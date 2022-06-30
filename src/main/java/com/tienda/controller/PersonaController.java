@@ -1,12 +1,10 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.controller;
 
 import com.tienda.entity.Persona;
-import com.tienda.repository.PaisRepository;
 import com.tienda.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +12,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- *
- * @author Aurelio
- */
 @Controller
 public class PersonaController {
     
     @Autowired
     private IPersonaService personaService;
     
-    @GetMapping("/persona")
+    @GetMapping("/persona")//Cuando este man reciba un /persona, todo lo de abajo se ejecutará
     public String index (Model model){
-      List<Persona> listaPersona = personaService.getAllPersona();
-      model.addAttribute("titulo","Tabla Personas");
-      model.addAttribute("personas",listaPersona);
-      return "personas";
+        List<Persona> listaPersona = personaService.getAllPersona();
+        model.addAttribute("titulo", "Tabla Personas");
+        model.addAttribute("personas", listaPersona);
+        return "personas";
     }
 }

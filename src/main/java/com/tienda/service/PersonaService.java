@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.service;
 
@@ -11,17 +10,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Service//Declaramos que esta clase va a ser un servicio
+public class PersonaService implements IPersonaService{//Es necesario implementar a la interface PersonaService para tener acceso a los metodos que estan ahí
 
-
-/**
- *
- * @author Aurelio
- */
-@Service
-public class PersonaService implements IPersonaService{
-
-    @Autowired
-    private PersonaRepository personaRepository;
+    @Autowired //Hacemos una Inyección de independencias
+    private PersonaRepository personaRepository;//Creamos una variable de tipo PersonaRepository para poder tener acceso al repositorio y a sus metodos 
     
     @Override
     public List<Persona> getAllPersona() {
@@ -29,8 +22,8 @@ public class PersonaService implements IPersonaService{
     }
 
     @Override
-    public Persona getPersonaById(long id) {
-       return personaRepository.findById(id).orElse(null);
+    public Persona getPersonaById(long id) {//Parametro
+        return personaRepository.findById(id).orElse(null);//argumento
     }
 
     @Override
@@ -42,7 +35,5 @@ public class PersonaService implements IPersonaService{
     public void delete(long id) {
         personaRepository.deleteById(id);
     }
-    
-
     
 }

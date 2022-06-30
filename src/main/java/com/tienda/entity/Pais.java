@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.tienda.entity;
 
@@ -12,16 +11,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- *
- * @author Aurelio
- */
 @Entity
 @Table(name = "paises")
-public class Pais implements Serializable {
-
+public class Pais implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
     private String pais;
 
@@ -40,6 +34,6 @@ public class Pais implements Serializable {
     public void setPais(String pais) {
         this.pais = pais;
     }
-
-
+    
+    
 }
